@@ -1,4 +1,4 @@
-const me = [
+const user = [
     {
         name: "Elvis Espinoza",
         age: 25,
@@ -13,34 +13,6 @@ const me = [
         question: "Why do you want to be a programmer?",
         answer: "I like tecnology and computers, I love programming but I need to practice, study and learn more"
     },
-];
-
-const elvis = document.querySelector(".elvis");
-let html = `<h2>Name: ${me[0].name}</h2>
-    <h2>Age: ${me[0].age}</h2>
-    <h3>My hobbies</h3>
-    <ul>
-        ${myHobbies(me[0].hobbies)}
-    </ul>
-    <h3>${me[0].question}</h3>
-    <p>${me[0].answer}</p>`;
-
-function myHobbies(array) {
-    let html = "";
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        html += `<li>${element}</li>`;
-    }
-
-    return html;
-}
-
-elvis.innerHTML = html;
-console.log(elvis); //Ver arbol html en la consola.
-console.log(html); // Ver el dibujo del html en consola, etiquetas y contenido.
-
-
-const user = [
     {
         name: "Brayan stiven munoz quiroz",
         age: "22 años",
@@ -82,65 +54,33 @@ const user = [
     },
 ];
 
-const brayan = document.querySelector(".brayan");
-let html1 = `<h1>${user[0].name}</h1>
-    <h3>Edad: ${user[0].age}</h3>
+const container = document.querySelector(".container"); 
+
+let html = "";
+
+for (let i = 0; i < user.length; i++) {
+    html += `<h1>${user[i].name}</h1>
+    <h3>Edad: ${user[i].age}</h3>
     <h3>Mis hobbies</h3>
     <ul>
-        ${printHobbies(user[0].hobbies)}
+        ${printHobbies(user[i].hobbies)}
     </ul>
     <h3>Por que quiero ser programador</h3>
     <div>
-        <p>${user[0].question}</p>
+        <p>${user[i].question}</p>
     </div>`;
+}
+
 function printHobbies(array) {
-    let html1 = "";
+    let html = "";
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
-        html1 += `<li>${element}</li>`;
-    }
-    return html1;
-}
-brayan.innerHTML = html1;
+        html += `<li>${element}</li>`
+    }   
 
-const eleazar = document.querySelector(".eleazar");
-let html2 = `<h1>${user[1].name}</h1>
-    <h3>Edad: ${user[1].age}</h3>
-    <h3>Mis hobbies</h3>
-    <ul>
-        ${printHobbiesHtml2(user[1].hobbies)}
-    </ul>
-    <h3>Por que quiero ser programador</h3>
-    <div>
-        <p>${user[1].question}</p>
-    </div>`;
-function printHobbiesHtml2(array) {
-    let html2 = "";
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        html2 += `<li>${element}</li>`;
-    }
-    return html2;
+    return html;
 }
-eleazar.innerHTML = html2;
 
-const francis = document.querySelector(".francis");
-let html3 = `<h1>${user[2].name}</h1>
-    <h3>Edad: ${user[2].age}</h3>
-    <h3>Mis hobbies</h3>
-    <ul>
-        ${printHobbiesHtml2(user[2].hobbies)}
-    </ul>
-    <h3>Por que quiero ser programador</h3>
-    <div>
-        <p>${user[1].question}</p>
-    </div>`;
-function printHobbiesHtml2(array) {
-    let html3 = "";
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        html3 += `<li>${element}</li>`;
-    }
-    return html3;
-}
-francis.innerHTML = html3;
+container.innerHTML = html;
+console.log(container); //Ver arbol html en la consola.
+console.log(html); // Ver el dibujo del html en consola, etiquetas y contenido.
