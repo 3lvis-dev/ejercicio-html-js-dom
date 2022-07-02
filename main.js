@@ -59,6 +59,7 @@ const container = document.querySelector(".container");
 let html = "";
 
 for (let i = 0; i < user.length; i++) {
+
     html += `<h1>${user[i].name}</h1>
     <h3>Edad: ${user[i].age}</h3>
     <h3>Mis hobbies</h3>
